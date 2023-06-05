@@ -1,4 +1,4 @@
-export function Nought({isGray, noughtOrCross}: {isGray: boolean, noughtOrCross: string|undefined}) {
+export function Nought({isGray, noughtOrCross}: {isGray: boolean, noughtOrCross: String|undefined}) {
 
     return (
         <div className='relative'>

@@ -1,9 +1,17 @@
+'use client'
 import { Cross } from '@/components/Cross'
 import { NandCTougle } from '@/components/NandCToggle'
 import { Nought } from '@/components/Noughts'
-import Image from 'next/image'
+
+
 
 export default function Home() {
+  
+  const handleClick = (arg: string) => {
+
+    
+
+  }
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-darkNavy">
       <div className='flex items-center'>
@@ -20,7 +28,7 @@ export default function Home() {
       </div>
 
       <div className='w-11/12'>
-        <button className='w-full rounded-2xl tracking-[1px] font-bold bg-orange shadow-[0_8px_0_0_#CC8B13] text-lg p-2 mb-5 hover:bg-lightorange'>
+        <button onClick={() => handleClick("Computer")} className='w-full rounded-2xl tracking-[1px] font-bold bg-orange shadow-[0_8px_0_0_#CC8B13] text-lg p-2 mb-5 hover:bg-lightorange'>
           NEW GAME (VS CPU)
         </button>
         <button className='w-full rounded-2xl tracking-[1px] font-bold bg-blue shadow-[0_8px_0_0_#118C87] text-lg p-2 hover:bg-lightblue'>
