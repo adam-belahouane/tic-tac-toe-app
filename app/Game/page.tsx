@@ -1,4 +1,5 @@
 import { Cross } from "@/components/Cross"
+import MainGrid from "@/components/MainGrid"
 import { Nought } from "@/components/Noughts"
 import Turn from "@/components/Turn"
 
@@ -6,10 +7,10 @@ export default function Game() {
 
     return (
         <div className="min-h-screen flex flex-col items-center bg-darkNavy">
-            <div className="flex justify-between w-10/12 my-3 items-center">
-                <div className='flex items-center'>
+            <div className="flex justify-between w-10/12 mt-6 mb-[64px] items-center">
+                <div className='flex items-center justify-between w-[76px]'>
                     <Cross isGray={false} noughtOrCross='' isSmall={false} />
-                    <Nought isGray={false} noughtOrCross='' />
+                    <Nought isGray={false} noughtOrCross='' isSmall={false} />
                 </div>
 
                 <Turn />
@@ -19,7 +20,9 @@ export default function Game() {
                 </button>
 
 
+
             </div>
+            <MainGrid />
         </div>
     )
 }

@@ -11,9 +11,9 @@ export default function Home() {
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-darkNavy">
-      <div className='flex items-center'>
+      <div className='flex items-center justify-between w-[76px]'>
         <Cross isGray={false} noughtOrCross='' isSmall={false} />
-        <Nought isGray={false} noughtOrCross='' />
+        <Nought isGray={false} noughtOrCross='' isSmall={false} />
       </div>
 
 
