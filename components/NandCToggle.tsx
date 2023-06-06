@@ -11,10 +11,10 @@ export function NandCTougle () {
     return(
         <div className='flex items-center justify-center  bg-darkNavy text-sliver w-full rounded-2xl p-2 my-4'>
           <button onClick={() => dispatch({player: "x"})} className={`flex justify-center items-center w-full p-3 ${game?.player === "x"?"bg-sliver rounded-2xl":""}`}>
-            <Cross isGray={true} noughtOrCross={game?.player} />
+            <Cross isGray={true} noughtOrCross={game?.player} isSmall={false}/>
           </button>
           <button onClick={() => dispatch({player: "o"})} className={`flex justify-center items-center w-full p-3 ${game?.player === "o"?"bg-sliver rounded-2xl":""}`}>
-            <Nought isGray={true} noughtOrCross={game?.player}/>
+            <Nought isGray={true} noughtOrCross={game?.player} isSmall={false}/>
           </button>
         </div>
     )
