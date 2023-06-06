@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-darkNavy">
       <div className='flex items-center'>
-        <Cross isGray={false} noughtOrCross='' />
+        <Cross isGray={false} noughtOrCross='' isSmall={false} />
         <Nought isGray={false} noughtOrCross='' />
       </div>
 
