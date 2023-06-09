@@ -19,7 +19,10 @@ export const metadata = {
 interface State {
   player: String,
   gameMode: String,
-  Turn?: string
+  Turn?: string,
+  x: number,
+  y: number,
+  tie: number
 }
 
 export default function RootLayout({
@@ -38,7 +41,10 @@ export default function RootLayout({
     {
       player: "x",
       gameMode: "player",
-      Turn: "x"
+      Turn: "x",
+      x: 0,
+      y: 0,
+      tie: 0
     }
   )
   return (
