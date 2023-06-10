@@ -6,6 +6,7 @@ import checkWin from "../tools/checkWin"
 import { useContext } from 'react'
 import { GameContext, GameDispatchContext } from "@/app/layout"
 import TrackingWins from "./TrackingWins"
+import computerMoves from "../tools/ComputerMoves"
 
 export default function MainGrid() {
     const intialGrid = ["", "", "", "", "", "", "", "", ""]
@@ -15,15 +16,27 @@ export default function MainGrid() {
 
     useEffect(() => {
         let x = checkWin(grid)
-        if(x !== undefined){
-            dispatch({winner: x})
+        if (x !== undefined) {
+            dispatch({ winner: x })
         }
+
+        if (game?.player !== game?.Turn) {
+            let array: (string | undefined)[] = computerMoves(grid, game?.Turn)
+
+            if(game?.Turn == "x"){
+                dispatch({Turn: "o"})
+            }else{
+                dispatch({Turn: "x"})
+            }
+            setGrid(array)
+        }
+
     }, [grid])
 
     useEffect(() => {
-        if(game?.resetGrid){
+        if (game?.resetGrid) {
             setGrid(intialGrid)
-            dispatch({resetGrid: false})
+            dispatch({ resetGrid: false })
         }
     }, [game?.resetGrid])
     return (
