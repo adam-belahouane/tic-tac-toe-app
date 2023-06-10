@@ -5,6 +5,7 @@ import Square from "./Square"
 import checkWin from "../tools/checkWin"
 import { useContext } from 'react'
 import { GameContext, GameDispatchContext } from "@/app/layout"
+import TrackingWins from "./TrackingWins"
 
 export default function MainGrid() {
     const intialGrid = ["", "", "", "", "", "", "", "", ""]
@@ -32,18 +33,7 @@ export default function MainGrid() {
                     <Square key={index} index={index} content={item} setGrid={setGrid} grid={grid} />
                 ))
             }
-            <div className="flex items-center justify-center flex-col bg-lightblue rounded-[10px] p-3">
-                <div className="text-[14px] tracking-[0.88px] font-medium">X (YOU)</div>
-                <div className="text-[20px] tracking-[1.25px] font-bold leading-none">{game?.x}</div>
-            </div>
-            <div className="flex items-center justify-center flex-col bg-sliver rounded-[10px] p-3">
-                <div className="text-[14px] tracking-[0.88px] font-medium">TIES</div>
-                <div className="text-[20px] tracking-[1.25px] font-bold leading-none">{game?.tie}</div>
-            </div>
-            <div className="flex items-center justify-center flex-col bg-orange rounded-[10px] p-3">
-                <div className="text-[14px] tracking-[0.88px] font-medium">O (CPU)</div>
-                <div className="text-[20px] tracking-[1.25px] font-bold leading-none">{game?.y}</div>
-            </div>
+            <TrackingWins />
         </div>
     )
 }

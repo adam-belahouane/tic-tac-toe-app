@@ -10,13 +10,9 @@ export default function Buttons() {
 
     const handleClick = (str: string) => {
         if (str === "Computer") {
-            dispatch({ gameMode: str })
-            console.log("hi");
-            
+            dispatch({ gameMode: "Computer" })
         } else {
-            dispatch({ gameMode: str })
-            console.log(game);
-            
+            dispatch({ gameMode: "player" })
         }
         router.push('/Game')
 
