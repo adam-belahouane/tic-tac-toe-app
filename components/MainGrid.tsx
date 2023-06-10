@@ -3,12 +3,19 @@
 import { useEffect, useState } from "react"
 import Square from "./Square"
 import checkWin from "../tools/checkWin"
+import { useContext } from 'react'
+import { GameContext, GameDispatchContext } from "@/app/layout"
 
 export default function MainGrid() {
     const [grid, setGrid] = useState<(string | undefined)[]>(["", "", "", "", "", "", "", "", ""])
+    const game = useContext(GameContext)
+    const dispatch = useContext(GameDispatchContext)
 
     useEffect(() => {
-        console.log(checkWin(grid));
+        let x = checkWin(grid)
+        if(!x){
+            dispatch({winner: x})
+        }
     }, [grid])
     return (
         <div className="grid grid-cols-3 gap-x-4 gap-y-6 w-10/12">

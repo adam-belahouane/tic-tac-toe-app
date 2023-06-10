@@ -22,7 +22,9 @@ interface State {
   Turn?: string,
   x: number,
   y: number,
-  tie: number
+  tie: number,
+  winner: string,
+  resetGrid: boolean
 }
 
 export default function RootLayout({
@@ -44,7 +46,9 @@ export default function RootLayout({
       Turn: "x",
       x: 0,
       y: 0,
-      tie: 0
+      tie: 0,
+      winner: "",
+      resetGrid: false
     }
   )
   return (
