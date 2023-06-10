@@ -2,27 +2,26 @@
 import { Cross } from "./Cross";
 import { Nought } from "./Noughts";
 import { useContext } from "react";
-import { GameDispatchContext } from "@/app/layout";
+import { GameContext, GameDispatchContext, initialState } from "@/app/layout";
 import { useRouter } from "next/navigation"
 
 export default function Modal({ winner }: { winner: string }) {
     const dispatch = useContext(GameDispatchContext)
+    const game = useContext(GameContext)
     const router = useRouter()
     function handleQuit() {
-        dispatch({
-            player: "x",
-            gameMode: "player",
-            Turn: "x",
-            x: 0,
-            y: 0,
-            tie: 0,
-            winner: "",
-            resetGrid: false
-        })
+        dispatch(initialState)
         router.push("/")
     }
 
     function handleNextRound() {
+        if(winner == "tie"){
+            dispatch({tie: game!.tie + 1})
+        } else if(winner == "x"){
+            dispatch({x: game!.x + 1})
+        } else{
+            dispatch({y: game!.y + 1})
+        }
         dispatch({resetGrid: true, winner: ""})
     }
     return (

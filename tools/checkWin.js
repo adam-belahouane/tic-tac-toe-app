@@ -1,4 +1,14 @@
-
+function checkFull(array) {
+    for(let i = 0; i < array.length; i++){
+        if(array[i] === ""){
+            console.log("something");
+            return false
+        }
+            
+    }
+    console.log("true");
+    return true
+}
 
 export default function checkWin(array) {
     let x = ""
@@ -17,15 +27,8 @@ export default function checkWin(array) {
 
     if(checkFull(array)){return "tie"}
 
-    return false
+    return ""
+
 }
 
-function checkFull(array) {
-    for(let i = 0; array.length; i++){
-        if(array[i] === ""){
-            return false
-        }
-    }
 
-    return true
-}

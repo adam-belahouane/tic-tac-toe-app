@@ -1,10 +1,11 @@
 'use client'
-import { GameDispatchContext } from "@/app/layout"
+import { GameContext, GameDispatchContext } from "@/app/layout"
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
 
 export default function Buttons() {
     const dispatch = useContext(GameDispatchContext)
+    const game = useContext(GameContext)
     const router = useRouter()
 
     const handleClick = (str: string) => {
@@ -14,6 +15,8 @@ export default function Buttons() {
             
         } else {
             dispatch({ gameMode: str })
+            console.log(game);
+            
         }
         router.push('/Game')
 

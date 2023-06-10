@@ -27,6 +27,17 @@ interface State {
   resetGrid: boolean
 }
 
+export const initialState = {
+  player: "x",
+  gameMode: "player",
+  Turn: "x",
+  x: 0,
+  y: 0,
+  tie: 0,
+  winner: "",
+  resetGrid: false
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -40,16 +51,7 @@ export default function RootLayout({
         ...action
       }
     },
-    {
-      player: "x",
-      gameMode: "player",
-      Turn: "x",
-      x: 0,
-      y: 0,
-      tie: 0,
-      winner: "",
-      resetGrid: false
-    }
+    initialState
   )
   return (
     <GameContext.Provider value={state} >
