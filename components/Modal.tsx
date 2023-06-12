@@ -15,26 +15,42 @@ export default function Modal({ winner }: { winner: string }) {
     }
 
     function handleNextRound() {
-        if(winner == "tie"){
-            dispatch({tie: game!.tie + 1})
-        } else if(winner == "x"){
-            dispatch({x: game!.x + 1})
-        } else{
-            dispatch({y: game!.y + 1})
+        if (winner == "tie") {
+            dispatch({ tie: game!.tie + 1 })
+        } else if (winner == "x") {
+            dispatch({ x: game!.x + 1 })
+        } else {
+            dispatch({ y: game!.y + 1 })
         }
-        dispatch({resetGrid: true, winner: ""})
+        dispatch({ resetGrid: true, winner: "" })
+    }
+
+    function handleTitle() {
+        if (game?.gameMode === "player") {
+            if (winner === game.player) {
+                return "PLAYER 1 WINS!"
+            } else {
+                return "PLAYER 2 WINS!"
+            }
+        } else {
+            if (winner === game?.player) {
+                return "YOU WON!"
+            } else {
+                return "OH NO, YOU LOST..."
+            }
+        }
     }
     return (
         <div className="fixed z-1 left-0 top-0 w-full h-full bg-[#00000066]  flex items-center justify-center">
-            <div className="w-full bg-semidarknavy flex items-center justify-center flex-col py-6">
-                <div className="font-bold text-sm tracking-[0.88px] text-sliver">OH NO, YOU LOST...</div>
-                <div className="flex justify-center items-center py-4">
-                    {winner === "x" ? <Cross isGray={false} noughtOrCross='' isSmall={false} /> : <Nought isGray={false} noughtOrCross='' isSmall={false} />}
-                    <div className={`font-bold text-2xl tracking-[1.5px] ml-2 ${winner === "x" ? "text-lightblue" : "text-orange"}`}>TAKES THE ROUND</div>
-                </div>
+            <div className="w-full bg-semidarknavy h-2/6 flex items-center justify-center flex-col py-6">
+                {winner === "tie" ? <div className="text-sliver font-bold tracking-[1.5px] text-2xl mb-5">ROUND TIED</div> : <><div className="font-bold text-sm tracking-[0.88px] text-sliver">{handleTitle()}</div>
+                    <div className="flex justify-center items-center py-4">
+                        {winner === "x" ? <Cross isGray={false} noughtOrCross='' isSmall={false} /> : <Nought isGray={false} noughtOrCross='' isSmall={false} />}
+                        <div className={`font-bold text-2xl tracking-[1.5px] ml-2 ${winner === "x" ? "text-lightblue" : "text-orange"}`}>TAKES THE ROUND</div>
+                    </div></>}
                 <div>
                     <button onClick={() => handleQuit()} className="font-bold tracking-[1px] text-[16px] rounded-[10px] bg-sliver p-3 shadow-[0_4px_0_0_#6B8997] hover:bg-sliverhover">QUIT</button>
-                    <button onClick={handleNextRound} className="font-bold tracking-[1px] ml-2 text-[16px] rounded-[10px] bg-orange p-3 shadow-[0_4px_0_0_#CC8B13] hover:bg-lightorange">NEXT ROUND</button>
+                    <button onClick={handleNextRound} className="font-bold tracking-[1px] ml-4 text-[16px] rounded-[10px] bg-orange p-3 shadow-[0_4px_0_0_#CC8B13] hover:bg-lightorange">NEXT ROUND</button>
                 </div>
             </div>
         </div>
