@@ -19,17 +19,19 @@ export default function MainGrid() {
         if (x !== undefined) {
             dispatch({ winner: x })
         }
-
-        if (game?.player !== game?.Turn) {
-            let array: (string | undefined)[] = computerMoves(grid, game?.Turn)
-
-            if(game?.Turn == "x"){
-                dispatch({Turn: "o"})
-            }else{
-                dispatch({Turn: "x"})
+        if(game!.gameMode !== "player"){
+            if (game?.player !== game?.Turn) {
+                let array: (string | undefined)[] = computerMoves(grid, game?.Turn)
+    
+                if(game?.Turn == "x"){
+                    dispatch({Turn: "o"})
+                }else{
+                    dispatch({Turn: "x"})
+                }
+                setGrid(array)
             }
-            setGrid(array)
         }
+
 
     }, [grid])
 
