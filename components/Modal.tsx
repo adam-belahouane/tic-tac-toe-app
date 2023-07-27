@@ -41,7 +41,7 @@ export default function Modal({ winner, isReset, setIsReset }: { winner: string,
         }
     }
     return (
-        <div className="fixed z-1 left-0 top-0 w-full h-full bg-[#00000066]  flex items-center justify-center">
+        <div className="fixed z-10 left-0 top-0 w-full h-full bg-[#00000066]  flex items-center justify-center">
             <div className="w-full bg-semidarknavy h-2/6 flex items-center justify-center flex-col py-6">
                 {isReset ?
                     <>

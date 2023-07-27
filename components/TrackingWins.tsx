@@ -23,7 +23,7 @@ export default function TrackingWins() {
 
     return (
         <>
-            <div className="flex items-center justify-center flex-col bg-lightblue rounded-[10px] p-3">
+            <div className="flex items-center justify-center flex-col bg-blue rounded-[10px] p-3">
                 <div className="text-[14px] tracking-[0.88px] font-medium">X {handleTitle("x")}</div>
                 <div className="text-[20px] tracking-[1.25px] font-bold leading-none">{game?.x}</div>
             </div>

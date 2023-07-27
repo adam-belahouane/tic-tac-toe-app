@@ -42,7 +42,7 @@ export default function MainGrid() {
         }
     }, [game?.resetGrid])
     return (
-        <div className="grid grid-cols-3 gap-x-4 gap-y-6 w-10/12">
+        <div className="grid grid-cols-3 gap-x-4 gap-y-6 w-[328px] sm:w-[460px]">
             {
                 grid.map((item, index) => (
                     <Square key={index} index={index} content={item} setGrid={setGrid} grid={grid} />
