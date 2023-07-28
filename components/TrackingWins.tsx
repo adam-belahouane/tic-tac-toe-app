@@ -1,4 +1,4 @@
-import { GameContext } from "@/app/layout"
+import { GameContext } from "@/app/Sharedstateprovider"
 import { useContext } from "react"
 
 export default function TrackingWins() {

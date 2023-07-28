@@ -5,7 +5,7 @@ import MainGrid from "@/components/MainGrid"
 import { Nought } from "@/components/Noughts"
 import Turn from "@/components/Turn"
 import { useContext, useState } from 'react'
-import { GameContext, GameDispatchContext } from "@/app/layout"
+import { GameContext, GameDispatchContext } from "@/app/Sharedstateprovider"
 import Modal from "@/components/Modal"
 
 export default function Game() {

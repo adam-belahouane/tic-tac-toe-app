@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import Square from "./Square"
 import checkWin from "../tools/checkWin"
 import { useContext } from 'react'
-import { GameContext, GameDispatchContext } from "@/app/layout"
+import { GameContext, GameDispatchContext } from "@/app/Sharedstateprovider"
 import TrackingWins from "./TrackingWins"
 import computerMoves from "../tools/ComputerMoves"
 

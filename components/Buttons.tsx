@@ -1,5 +1,5 @@
 'use client'
-import { GameContext, GameDispatchContext } from "@/app/layout"
+import { GameContext, GameDispatchContext } from "@/app/Sharedstateprovider"
 import { useRouter } from "next/navigation"
 import { useContext } from "react"
 

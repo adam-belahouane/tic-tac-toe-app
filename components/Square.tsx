@@ -2,7 +2,7 @@ import { Cross } from "./Cross";
 import { Gridcross } from "./GridCross";
 import { Gridnought } from "./GridNought";
 import { Nought } from "./Noughts";
-import { GameContext, GameDispatchContext } from "@/app/layout";
+import { GameContext, GameDispatchContext } from "@/app/Sharedstateprovider";
 import { useContext, Dispatch } from "react";
 
 export default function Square({ content, grid, setGrid, index }: { content: string | undefined, grid: (string )[], setGrid: Dispatch<(string)[]>, index: number }) {

@@ -2,7 +2,7 @@
 import { Cross } from "./Cross";
 import { Nought } from "./Noughts";
 import { useContext, Dispatch } from "react";
-import { GameContext, GameDispatchContext, initialState } from "@/app/layout";
+import { GameContext, GameDispatchContext, initialState } from "@/app/Sharedstateprovider";
 import { useRouter } from "next/navigation"
 
 export default function Modal({ winner, isReset, setIsReset }: { winner: string, isReset: boolean, setIsReset: Dispatch<boolean> }) {

@@ -1,5 +1,5 @@
 'use client'
-import { GameContext } from "@/app/layout"
+import { GameContext } from "@/app/Sharedstateprovider"
 import { useContext } from 'react'
 import { Nought } from "./Noughts"
 import { Cross } from "./Cross"

@@ -7,8 +7,8 @@ export function Cross({ isGray, noughtOrCross, isSmall }: { isGray: boolean, nou
           <div className={`w-[5px] h-5 -rotate-45 absolute top-0 ${isGray ? noughtOrCross === "x" ? 'bg-darkNavy' : 'bg-sliver' : 'bg-blue'}`}></div></div> :
 
           <>
-            <div className={`w-[12px] h-10 rounded-sm  rotate-45 ${isGray ? noughtOrCross === "x" ? 'bg-darkNavy' : 'bg-sliver' : 'bg-blue'} `}></div>
-            <div className={`w-[12px] h-10 rounded-sm -rotate-45 absolute top-0 ${isGray ? noughtOrCross === "x" ? 'bg-darkNavy' : 'bg-sliver' : 'bg-blue'}`}></div></>}
+            <div className={`w-[10px] h-[35px] rounded-sm  rotate-45 ${isGray ? noughtOrCross === "x" ? 'bg-darkNavy' : 'bg-sliver' : 'bg-blue'} `}></div>
+            <div className={`w-[10px] h-[35px] rounded-sm -rotate-45 absolute top-0 ${isGray ? noughtOrCross === "x" ? 'bg-darkNavy' : 'bg-sliver' : 'bg-blue'}`}></div></>}
     </div>
   )
 }
