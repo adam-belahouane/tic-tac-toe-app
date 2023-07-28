@@ -1,4 +1,4 @@
-export default function computerMoves(grid, turn) {
+export default function computerMoves(grid: Array<string>, turn: string) {
   const array = [...grid];
 
   const opponent = turn === "x" ? "o" : "x";
@@ -49,13 +49,13 @@ export default function computerMoves(grid, turn) {
     }
   }
 
-  // If no winning or blocking move, choose an available spot
+  
   // Best move middle square
   if (array[4] === "") {
     array[4] = turn;
     return array;
   }
-
+  // If no winning or blocking move, choose an available spot
   for (let i = 0; i < array.length; i++) {
     if (array[i] === "") {
       array[i] = turn;

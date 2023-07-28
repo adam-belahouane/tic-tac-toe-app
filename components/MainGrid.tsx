@@ -10,28 +10,33 @@ import computerMoves from "../tools/ComputerMoves"
 
 export default function MainGrid() {
     const intialGrid = ["", "", "", "", "", "", "", "", ""]
-    const [grid, setGrid] = useState<(string | undefined)[]>(intialGrid)
+    const [grid, setGrid] = useState<(string)[]>(intialGrid)
     const game = useContext(GameContext)
     const dispatch = useContext(GameDispatchContext)
 
-    useEffect(() => {
-        let x = checkWin(grid)
-        if (x !== undefined) {
-            dispatch({ winner: x })
-        }
-        if(game!.gameMode !== "player"){
+    let handleComputerMoves = () => {
+        if (game!.gameMode !== "player") {
             if (game?.player !== game?.Turn) {
-                let array: (string | undefined)[] = computerMoves(grid, game?.Turn)
-    
-                if(game?.Turn == "x"){
-                    dispatch({Turn: "o"})
-                }else{
-                    dispatch({Turn: "x"})
+                let array: (string)[] = computerMoves(grid, game!.Turn)
+
+                if (game?.Turn == "x") {
+                    dispatch({ Turn: "o" })
+                } else {
+                    dispatch({ Turn: "x" })
                 }
                 setGrid(array)
             }
         }
 
+    }
+
+    useEffect(() => {
+        let x = checkWin(grid)
+        if (x !== "") {
+            dispatch({ winner: x })
+        } else {
+            setTimeout(() => handleComputerMoves(), 500)
+        }
 
     }, [grid])
 

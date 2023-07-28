@@ -19,7 +19,7 @@ export const metadata = {
 interface State {
   player: String,
   gameMode: String,
-  Turn?: string,
+  Turn: string,
   x: number,
   y: number,
   tie: number,

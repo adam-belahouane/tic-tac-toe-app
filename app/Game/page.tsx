@@ -14,7 +14,7 @@ export default function Game() {
 
     return (
         <>
-            <div className="min-h-screen flex flex-col items-center justify-center bg-darkNavy">
+            <div className="min-h-screen flex flex-col items-center bg-darkNavy sm:justify-center">
                 <div className="grid grid-cols-3 gap-x-4 gap-y-6 mt-6 mb-[64px] w-[328px] sm:w-[460px]">
                     <div className='flex items-center justify-between w-[76px]'>
                         <Cross isGray={false} noughtOrCross='' isSmall={false} />

@@ -1,4 +1,4 @@
-function checkFull(array) {
+function checkFull(array: string[]) {
     for(let i = 0; i < array.length; i++){
         if(array[i] === ""){
             return false
@@ -8,7 +8,7 @@ function checkFull(array) {
     return true
 }
 
-export default function checkWin(array) {
+export default function checkWin(array: string[]) {
     let x = ""
     let y = ["x", "o"]
     for(let i = 0; i < y.length; i++){
