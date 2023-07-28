@@ -1,5 +1,6 @@
 import { Cross } from "./Cross";
 import { Gridcross } from "./GridCross";
+import { Gridnought } from "./GridNought";
 import { Nought } from "./Noughts";
 import { GameContext, GameDispatchContext } from "@/app/layout";
 import { useContext, Dispatch } from "react";
@@ -29,7 +30,7 @@ export default function Square({content, grid, setGrid, index}:{content: string 
     return(
         <button onClick={content === ""?handleClick: () => (<></>)} className={`bg-semidarknavy aspect-square rounded-[10px] shadow-[0_8px_0_0_#10212A] flex justify-center items-center `}>
             {
-                content === ""?<></>:content === "x"?<Gridcross/>:<Nought isGray={false} noughtOrCross='' isSmall={false} />
+                content === ""?<></>:content === "x"?<Gridcross/>:<Gridnought/>
             }
         </button>
     )

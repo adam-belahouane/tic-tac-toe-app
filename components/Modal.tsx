@@ -22,7 +22,7 @@ export default function Modal({ winner, isReset, setIsReset }: { winner: string,
         } else {
             dispatch({ y: game!.y + 1 })
         }
-        dispatch({ resetGrid: true, winner: "" })
+        dispatch({ resetGrid: true, winner: "", Turn: "x" })
     }
 
     function handleTitle() {
